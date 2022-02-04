@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 
-import requests
-import json
-import sys
-import os
+
 # Alfred-ticker
 # Light rain, mist 🌦   🌡️+41°F (feels +37°F, 96%) 🌬️0mph 🌒 2022-02-03 Thu 8:51AM
 
 
-
-import requests
+from lib import requests
+import json
+import sys
 import datetime 
 from config import WATCHLIST, SYMBOL_UP, SYMBOL_DOWN, API_KEY
+
+
 MY_TICKER = sys.argv[1]
 if MY_TICKER == '':
     MY_TICKER = WATCHLIST
@@ -73,10 +73,12 @@ for x in range(zz):
         MYOUTPUT["items"].append({
                 "title": "oops, this doesn't exist or there's no data",
                 "subtitle": "",
+                "icon": {
+                                "path": "icons/Warning.png"
+                            },
 
-                "arg": "https://finance.yahoo.com/quote/" 
+                "arg": "https://finance.yahoo.com/" 
                 })
-
-    
+        
 
 print (json.dumps(MYOUTPUT))

@@ -1,15 +1,18 @@
 # alfred-ticker
- An [Alfred](https://www.alfredapp.com/) workflow to show stock information from Yahoo Finance
+ An [Alfred](https://www.alfredapp.com/) workflow to show stock information from [Yahoo Finance](https://finance.yahoo.com/) using an [unofficial API](https://rapidapi.com/apidojo/api/yh-finance/)
 
  
+<a href="https://github.com/giovannicoppola/alfred-ticker/releases/latest/">
+<img alt="Downloads"
+src="https://img.shields.io/github/downloads/giovannicoppola/alfred-ticker/total?color=purple&label=Downloads"><br/>
+</a>
 
-![](images/ticker-screencast.gif "")
+![](images/ss1.png)
 
 <!-- MarkdownTOC autolink="true" bracket="round" depth="3" autoanchor="true" -->
 
 - [Setting up](#setting-up)
 - [Basic Usage](#usage)
-- [Known Issues](#known-issues)
 - [Acknowledgments](#acknowledgments)
 - [Changelog](#changelog)
 - [Feedback](#feedback)
@@ -23,47 +26,42 @@
 ### Needed
 
 - Alfred with Powerpack license
-- Python3 (use [this](https://complice.co/?r=4z020qsycl) link to get a bonus third week of free trial)
-- Complice API Token (available [here](https://complice.co/$USERNAME/auth_token) while you are logged in)
+- Python3 (howto [here](https://www.freecodecamp.org/news/python-version-on-mac-update/))
+- API key (sign up for an API key [here](https://rapidapi.com/apidojo/api/yh-finance/). A free plan allows 500 requests/month) 
+  
 
-
-
-
-1. Download the [most recent release](https://github.com/giovannicoppola/alfred-complice/releases/latest) of `alfred-complice` from Github and double-click to install
-2. Get your Complice Auth Token 
-	- in [Complice](https://complice.co/$USERNAME/auth_token), Select and copy to clipboard the auth token. 
-	_Example_: if the string is `{"username":"johndoe","auth_token":"abcd1234"}`, copy `abcd1234` (without quotes)
-
-3. In Alfred, open the 'Configure Workflow and Variables' window in `alfred-complice` preferences
-	<img src='images/alfred_prefs.png' width="500">	
-			
-	- set the `TOKEN` variable to the Complice Auth Token retrieved in Step 2
-	- _Optional:_ set the `POMOLENGTH` variable (predefined value: 25 min)
-	- _Optional:_ set the `TIMERLENGTH` variable (predefined value: 20 min)
-	
-4. _Optional:_ Setup a hotkey to launch alfred-complice
-5. _Optional:_ Change the keyword to launch alfred-complice
-	- keyword currently set to `!c`
+### Installation
+1. Download the [most recent release](https://github.com/giovannicoppola/alfred-ticker/releases/latest) of `alfred-ticker` from Github and double-click to install
+2. Get your API key
+3. In Alfred, open the 'Configure Workflow and Variables' window in `alfred-ticker` preferences
+	<img src='images/alfred_prefs.png' width="500">				
+	- set the `API_KEY` variable to the API key retrieved in Step 2
+	- _Optional:_ set the emoji you want to show when the ticker is down (`SYMBOL_DOWN`, default: ⬇️) or up (`SYMBOL_UP`, default: ⬆️)
+	- _Optional:_ set your watch list variable `WATCHLIST` (comma-separated list of ticker symbols)
+4. _Optional:_ Setup a hotkey to launch alfred-ticker
+5. _Optional:_ Change the keyword to launch alfred-ticker (currently set to `!t`)
 
 
 
 <a name="usage"></a>
 # Basic Usage 
 
-Check your watchlist or type stock symbols separated by comma
+Check your watchlist by typing your keyword or using your hotkey, or type stock symbols separated by comma
+![](images/ss2.png)
+Pressing Enter will open the stock page on Yahoo Finance.
 
 
-<a name="known-issues"></a>
 
 <a name="acknowledgments"></a>
 # Acknowledgments
 
-- [Dean Jackson](https://github.com/deanishe) and Vitor for their incredible help on the Alfred mailing list. 
+- [Dean Jackson](https://github.com/deanishe) and [Vitor Galvão](https://github.com/vitorgalvao) for their incredible help on the Alfred mailing list. 
+- Icon by [Iconka](http://www.iconka.com) from [icon-icons.com](https://icon-icons.com/icon/chart-growth-invest-market-stock/111188)
 
 <a name="changelog"></a>
 # Changelog
 
-- 09-17-2021: version 0.1
+- 02-04-2022: version 0.1
 
 <a name="feedback"></a>
 # Feedback

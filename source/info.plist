@@ -4,8 +4,23 @@
 <dict>
 	<key>bundleid</key>
 	<string>giovanni-alfred-ticker</string>
+	<key>category</key>
+	<string>Internet</string>
 	<key>connections</key>
 	<dict>
+		<key>428DA029-D041-4410-BA3D-1895BA77D9A0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>568B22E9-712A-4A14-BFB1-93B511440753</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>568B22E9-712A-4A14-BFB1-93B511440753</key>
 		<array>
 			<dict>
@@ -23,13 +38,63 @@
 	<key>createdby</key>
 	<string>giovanni</string>
 	<key>description</key>
-	<string></string>
+	<string>An Alfred workflow to show stock information from Yahoo Finance</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
 	<string>alfred-ticker</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>9434D8C6-71A7-4F1A-ADFA-F2F802FC3B96</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>428DA029-D041-4410-BA3D-1895BA77D9A0</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -56,7 +121,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string></string>
+				<string>⏳... fetching data</string>
 				<key>script</key>
 				<string>export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
 python3 ticker.py "$1"</string>
@@ -65,9 +130,9 @@ python3 ticker.py "$1"</string>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string></string>
+				<string>enter ticker symbol separated by comma</string>
 				<key>title</key>
-				<string>get ticker</string>
+				<string>alfred-ticker</string>
 				<key>type</key>
 				<integer>5</integer>
 				<key>withspace</key>
@@ -80,43 +145,58 @@ python3 ticker.py "$1"</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>9434D8C6-71A7-4F1A-ADFA-F2F802FC3B96</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string># Setting up
+
+### Needed
+
+- Alfred with Powerpack license
+- Python3 (howto [here](https://www.freecodecamp.org/news/python-version-on-mac-update/))
+- API key (sign up for an API key [here](https://rapidapi.com/apidojo/api/yh-finance/). A free plan allows 500 requests/month) 
+  
+
+### Installation
+1. Download the [most recent release](https://github.com/giovannicoppola/alfred-ticker/releases/latest) of `alfred-ticker` from Github and double-click to install
+2. Get your API key
+3. In Alfred, open the 'Configure Workflow and Variables' window in `alfred-ticker` preferences
+				
+	- set the `API_KEY` variable to the API key retrieved in Step 2
+	- _Optional:_ set the emoji you want to show when the ticker is down (`SYMBOL_DOWN`, default: ⬇️) or up (`SYMBOL_UP`, default: ⬆️)
+	- _Optional:_ set your watch list variable `WATCHLIST` (comma-separated list of ticker symbols)
+4. _Optional:_ Setup a hotkey to launch alfred-ticker
+5. _Optional:_ Change the keyword to launch alfred-ticker (currently set to `!t`)
+
+
+# Basic Usage 
+
+Check your watchlist by typing your keyword or using your hotkey, or type stock symbols separated by comma.
+
+Pressing Enter will open the stock page on Yahoo Finance
+
+# Feedback welcome!</string>
 	<key>uidata</key>
 	<dict>
+		<key>428DA029-D041-4410-BA3D-1895BA77D9A0</key>
+		<dict>
+			<key>xpos</key>
+			<integer>265</integer>
+			<key>ypos</key>
+			<integer>255</integer>
+		</dict>
 		<key>568B22E9-712A-4A14-BFB1-93B511440753</key>
 		<dict>
 			<key>xpos</key>
-			<integer>270</integer>
+			<integer>480</integer>
 			<key>ypos</key>
-			<integer>240</integer>
+			<integer>255</integer>
 		</dict>
 		<key>9434D8C6-71A7-4F1A-ADFA-F2F802FC3B96</key>
 		<dict>
 			<key>xpos</key>
-			<integer>460</integer>
+			<integer>695</integer>
 			<key>ypos</key>
-			<integer>240</integer>
+			<integer>255</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -135,8 +215,8 @@ python3 ticker.py "$1"</string>
 		<string>API_KEY</string>
 	</array>
 	<key>version</key>
-	<string></string>
+	<string>0.1</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/giovannicoppola/alfred-ticker</string>
 </dict>
 </plist>
