@@ -46,7 +46,9 @@ src="https://img.shields.io/github/downloads/giovannicoppola/alfred-ticker/total
 <a name="usage"></a>
 # Basic Usage 
 
-Check your watchlist by typing your keyword or using your hotkey, or type stock symbols separated by comma
+Check your watchlist by typing your keyword or using your hotkey...
+![](images/ss1.png)
+... or type stock symbols separated by comma
 ![](images/ss2.png)
 Pressing Enter will open the stock page on Yahoo Finance.
 
