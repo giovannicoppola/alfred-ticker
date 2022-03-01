@@ -63,6 +63,7 @@ Pressing Enter will open the stock page on Yahoo Finance.
 <a name="changelog"></a>
 # Changelog
 
+- 03-01-2022: version 0.2 removed `requests` dependency
 - 02-04-2022: version 0.1
 
 <a name="feedback"></a>
