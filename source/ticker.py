@@ -1,15 +1,26 @@
 #!/usr/bin/env python3
 
 
-# Alfred-ticker
+# Alfred-ticker, first release
 # Light rain, mist 🌦   🌡️+41°F (feels +37°F, 96%) 🌬️0mph 🌒 2022-02-03 Thu 8:51AM
 
+# removed `requests` dependency
+# Tuesday, March 1, 2022  Overcast ☁️   🌡️+29°F (feels +24°F, 56%) 🌬️←4mph 🌑 
 
-from lib import requests
+
 import json
 import sys
 import datetime 
 from config import WATCHLIST, SYMBOL_UP, SYMBOL_DOWN, API_KEY
+import urllib.request 
+import urllib.parse 
+from urllib.parse import urlencode
+
+
+def log(s, *args):
+    if args:
+        s = s % args
+    print(s, file=sys.stderr)
 
 
 MY_TICKER = sys.argv[1]
@@ -27,9 +38,23 @@ headers = {
     'x-rapidapi-key': API_KEY
     }
 
-response = requests.request("GET", url, headers=headers, params=querystring)
+myURLdict = {'region': 'US', 'symbols':MY_TICKER}
+qstr = urlencode(myURLdict)
+url=url+"?"+qstr
+#log (url)
 
-myData = response.json()
+
+URLrequest = urllib.request.Request(url)
+URLrequest.add_header("x-rapidapi-host","yh-finance.p.rapidapi.com")
+URLrequest.add_header("x-rapidapi-key",API_KEY)
+
+with urllib.request.urlopen(URLrequest) as URLresponse: 
+            myURLData = json.load(URLresponse)
+            log(URLresponse.status) 
+            #log(myURLData) 
+
+
+myData = myURLData
 zz = len (myData['quoteResponse']['result'])
 
 for x in range(zz):
