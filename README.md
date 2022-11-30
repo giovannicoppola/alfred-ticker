@@ -43,6 +43,7 @@ src="https://img.shields.io/github/downloads/giovannicoppola/alfred-ticker/total
 
 
 <h1 id="usage">Basic Usage</h1>
+
 Check your watchlist by typing your keyword or using your hotkey...
 ![](images/ss1.png)
 ... or type stock symbols separated by comma
@@ -58,6 +59,7 @@ Pressing Enter will open the stock page on Yahoo Finance.
 - Icon by [Iconka](http://www.iconka.com) from [icon-icons.com](https://icon-icons.com/icon/chart-growth-invest-market-stock/111188)
 
 <h1 id="changelog">Changelog</h1>
+
 - 11-30-2022: version 1.0 ready for Alfred 5
 - 03-01-2022: version 0.2 removed `requests` dependency
 - 02-04-2022: version 0.1
