@@ -20,8 +20,7 @@ src="https://img.shields.io/github/downloads/giovannicoppola/alfred-ticker/total
 <!-- /MarkdownTOC -->
 
 
-<a name="setting-up"></a>
-# Setting up
+<h1 id="setting-up">Setting up</h1>
 
 ### Needed
 
@@ -43,9 +42,7 @@ src="https://img.shields.io/github/downloads/giovannicoppola/alfred-ticker/total
 
 
 
-<a name="usage"></a>
-# Basic Usage 
-
+<h1 id="usage">Basic Usage</h1>
 Check your watchlist by typing your keyword or using your hotkey...
 ![](images/ss1.png)
 ... or type stock symbols separated by comma
@@ -54,21 +51,18 @@ Pressing Enter will open the stock page on Yahoo Finance.
 
 
 
-<a name="acknowledgments"></a>
-# Acknowledgments
+<h1 id="acknowledgments">Acknowledgments</h1>
+
 
 - [Dean Jackson](https://github.com/deanishe) and [Vitor Galvão](https://github.com/vitorgalvao) for their incredible help on the Alfred mailing list. 
 - Icon by [Iconka](http://www.iconka.com) from [icon-icons.com](https://icon-icons.com/icon/chart-growth-invest-market-stock/111188)
 
-<a name="changelog"></a>
-# Changelog
-
+<h1 id="changelog">Changelog</h1>
+- 11-30-2022: version 1.0 ready for Alfred 5
 - 03-01-2022: version 0.2 removed `requests` dependency
 - 02-04-2022: version 0.1
 
-<a name="feedback"></a>
-# Feedback
-
+<h1 id="feedback">Feedback</h1>
 Feedback welcome! If you notice a bug, or have ideas for new features, please feel free to get in touch either here, or on the [Alfred](https://www.alfredforum.com) forum. 
 
 
