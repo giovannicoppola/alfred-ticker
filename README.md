@@ -1,5 +1,5 @@
 # alfred-ticker
- An [Alfred](https://www.alfredapp.com/) workflow to show stock information from [Yahoo Finance](https://finance.yahoo.com/) using an [unofficial API](https://rapidapi.com/apidojo/api/yh-finance/)
+ An [Alfred](https://www.alfredapp.com/) workflow to show stock information from [Yahoo Finance](https://finance.yahoo.com/) (no API key needed)
 
  
 <a href="https://github.com/giovannicoppola/alfred-ticker/releases/latest/">
@@ -26,19 +26,15 @@ src="https://img.shields.io/github/downloads/giovannicoppola/alfred-ticker/total
 
 - Alfred with Powerpack license
 - Python3 (howto [here](https://www.freecodecamp.org/news/python-version-on-mac-update/))
-- API key (sign up for an API key [here](https://rapidapi.com/apidojo/api/yh-finance/). A free plan allows 500 requests/month) 
   
 
 ### Installation
 1. Download the [most recent release](https://github.com/giovannicoppola/alfred-ticker/releases/latest) of `alfred-ticker` from Github and double-click to install
-2. Get your API key
-3. In Alfred, open the 'Configure Workflow and Variables' window in `alfred-ticker` preferences
-	<img src='images/alfred_prefs.png' width="500">				
-	- set the `API_KEY` variable to the API key retrieved in Step 2
-	- _Optional:_ set the emoji you want to show when the ticker is down (`SYMBOL_DOWN`, default: ⬇️) or up (`SYMBOL_UP`, default: ⬆️)
-	- _Optional:_ set your watch list variable `WATCHLIST` (comma-separated list of ticker symbols)
-4. _Optional:_ Setup a hotkey to launch alfred-ticker
-5. _Optional:_ Change the keyword to launch alfred-ticker (currently set to `!t`)
+2. _Optional:_ In Alfred, open the 'Configure Workflow' window in `alfred-ticker` preferences
+	- change the keyword to launch alfred-ticker (default: `!t`)
+	- set the emoji you want to show when the ticker is down (`SYMBOL_DOWN`, default: ⬇️) or up (`SYMBOL_UP`, default: ⬆️)
+	- set your watch list (`WATCHLIST`, comma-separated list of ticker symbols)
+3. _Optional:_ Setup a hotkey to launch alfred-ticker
 
 
 
@@ -60,6 +56,7 @@ Pressing Enter will open the stock page on Yahoo Finance.
 
 <h1 id="changelog">Changelog</h1>
 
+- 09-27-2026: version 1.1 switched to Yahoo Finance's public chart endpoint (the RapidAPI yh-finance API stopped working); no API key needed anymore. Keyword is now configurable, non-USD tickers show their currency, clearer error messages
 - 11-30-2022: version 1.0 ready for Alfred 5
 - 03-01-2022: version 0.2 removed `requests` dependency
 - 02-04-2022: version 0.1
